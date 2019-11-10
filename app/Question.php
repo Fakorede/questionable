@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Question extends Model {
 
     protected $fillable = ['title', 'body'];
@@ -18,9 +19,9 @@ class Question extends Model {
         return $this->hasMany(Answer::class);
     }
 
-    public function acceptBestAnswer($answer)
+    public function acceptBestAnswer(Answer $answer)
     {
-        $this->best_answer_id = $answer;
+        $this->best_answer_id = $answer->id;
         $this->save();
     }
 

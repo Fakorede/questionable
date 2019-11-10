@@ -18,18 +18,18 @@
                             <a title="This answer is not useful" class="vote-down off">
                                 <i class="fas fa-caret-down fa-3x"></i>
                             </a>
-                            @can ('accept', $answer)
+                            @can('accept', $answer)
                                 <a title="Mark this answer as best answer" 
                                     class="{{ $answer->status }} mt-2"
-                                    onclick="event.preventDefault(); document.getElementById('accept-answer-{{ $answer->id }}').submit();"
+                                    onclick="event.preventDefault(); document.getElementById('answer-{{ $answer->id }}').submit();"
                                     >
                                     <i class="fas fa-check fa-2x"></i>                                    
                                 </a>
-                                <form action="{{ route('answers.accept', $answer->id) }}" id="accept-answer-{{ $answer->id }}" method="POST" style="display:none;">
+                                <form id="answer-{{ $answer->id }}" action="{{ route('answers.accept', ['answer' => $answer->id]) }}" method="POST" style="display:none;">
                                     @csrf
                                 </form>
                             @else
-                                @if ($answer->is_best)
+                                @if($answer->is_best)
                                     <a title="The question owner accepted this answer as best answer" 
                                         class="{{ $answer->status }} mt-2"                                        
                                         >
@@ -44,7 +44,7 @@
                                 <div class="col-4">
                                     <div class="ml-auto">
                                         @can ('update', $answer)
-                                            <a href="{{ route('questions.answers.edit', [$question->id, $answer->id]) }}" class="btn btn-sm btn-outline-info">Edit</a>
+                                            <a href="{{ route('questions.answers.edit', ['question' => $question->id, 'answer' => $answer->id]) }}" class="btn btn-sm btn-outline-info">Edit</a>
                                         @endcan
                                         @can ('delete', $answer)
                                             <form class="form-delete" method="post" action="{{ route('questions.answers.destroy', [$question->id, $answer->id]) }}">

@@ -18,9 +18,10 @@
                 </div>
 
                 <div class="card-body">
-                <form action="{{ route('questions.store') }}" method="post">
-                    @include("questions._form", ['buttonText' => 'Submit Question'])
-                </form>
+                    <form action="{{ route('questions.store') }}" method="post">
+                        @csrf
+                        @include("questions._form", ['buttonText' => 'Submit Question'])
+                    </form>
                 </div>
             </div>
         </div>
