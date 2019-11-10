@@ -27,6 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Relationships
+     */
     public function questions()
     {
         return $this->hasMany(Question::class);
@@ -37,6 +40,14 @@ class User extends Authenticatable
         return $this->hasMany(Answer::class);
     }
 
+    public function favorites()
+    {
+        return $this->belongsToMany(Question::class, 'favorites')->withTimestamps();;
+    }
+
+    /**
+     * Accessors
+     */
     public function getUrlAttribute()
     {
         // return route("questions.show", $this->id);
