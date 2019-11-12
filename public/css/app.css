@@ -11730,3 +11730,11 @@ form.form-delete {
   color: #28a745;
 }
 
+.divider {
+  padding: 20px 0;
+}
+
+.divider:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
