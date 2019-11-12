@@ -11,7 +11,9 @@
                 @foreach ($answers as $answer)
                     <div class="media">
                         {{-- vote contols --}}
-                        @include('shared._vote')
+                        @include('shared._vote', [
+                            'model' => $answer
+                        ])
 
                         <div class="media-body">
                             {!! $answer->body_html !!}
