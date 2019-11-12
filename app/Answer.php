@@ -14,6 +14,10 @@ class Answer extends Model
      */
     protected $fillable = ['body', 'user_id'];
 
+    /**
+     * Relationships
+     */
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -23,6 +27,15 @@ class Answer extends Model
     {
         return $this->belongsTo(Question::class);
     }
+
+    public function votes()
+    {
+        return $this->morphToMany(User::class, 'votable');
+    }
+
+    /**
+     * Accessors
+     */
 
     public function getBodyHtmlAttribute()
     {
@@ -44,6 +57,10 @@ class Answer extends Model
         return $this->isBest();
     }
 
+    /**
+     * Methods
+     */
+
     public function isBest()
     {
         return $this->id === $this->question->best_answer_id;
@@ -61,8 +78,8 @@ class Answer extends Model
             $question = $answer->question;
             $question->decrement('answers_count');
 
-            if($question->best_answer_id === $answer->id) {
-                $question->best_answer_id = NULL;
+            if ($question->best_answer_id === $answer->id) {
+                $question->best_answer_id = null;
                 $question->save();
             }
         });

@@ -27,12 +27,27 @@ class Question extends Model {
         return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
     }
 
+    public function votes()
+    {
+        return $this->morphToMany(User::class, 'votable');
+    }
+
     /**
      * Methods
      */
     public function isFavorited()
     {
         return $this->favorites()->where('user_id', auth()->id())->count() > 0;
+    }
+
+    public function upVotes()
+    {
+        return $this->votes()->wherePivot('vote', 1);
+    }
+
+    public function downVotes()
+    {
+        return $this->votes()->wherePivot('vote', -1);
     }
 
     public function acceptBestAnswer(Answer $answer)
