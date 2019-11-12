@@ -45,6 +45,7 @@ class Question extends Model {
         return $this->votes()->wherePivot('vote', 1);
     }
 
+
     public function downVotes()
     {
         return $this->votes()->wherePivot('vote', -1);
@@ -91,7 +92,7 @@ class Question extends Model {
     public function getStatusAttribute()
     {
         if($this->answers_count > 0) {
-            if($this->best_answered_id) {
+            if($this->best_answer_id) {
                 return "answered-accepted";
             }
             return "answered";
