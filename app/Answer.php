@@ -17,6 +17,13 @@ class Answer extends Model
     protected $fillable = ['body', 'user_id'];
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['created_date'];
+
+    /**
      * Relationships
      */
 

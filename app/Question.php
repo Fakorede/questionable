@@ -4,17 +4,29 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-class Question extends Model {
+class Question extends Model
+{
 
     use VotableTrait;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = ['title', 'body'];
-    
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['created_date'];
+
     /**
      * Relationships
      */
-    public function user() 
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
@@ -46,13 +58,13 @@ class Question extends Model {
     /**
      * Mutators
      */
-    public function setTitleAttribute($value) 
+    public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
 
-    // public function setBodyAttribute($value) 
+    // public function setBodyAttribute($value)
     // {
     //     $this->attributes['body'] = clean($value);
     // }
@@ -75,15 +87,15 @@ class Question extends Model {
         return route("questions.show", $this->slug);
     }
 
-    public function getCreatedDateAttribute() 
+    public function getCreatedDateAttribute()
     {
         return $this->created_at->diffForHumans();
-    } 
-    
+    }
+
     public function getStatusAttribute()
     {
-        if($this->answers_count > 0) {
-            if($this->best_answer_id) {
+        if ($this->answers_count > 0) {
+            if ($this->best_answer_id) {
                 return "answered-accepted";
             }
             return "answered";
@@ -110,5 +122,5 @@ class Question extends Model {
     {
         return \Parsedown::instance()->text($this->body);
     }
-    
+
 }
