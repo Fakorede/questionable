@@ -1,5 +1,5 @@
 @if ($answersCount > 0)
-    <div class="row mt-4">
+    <div class="row mt-4" v-cloak>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -13,6 +13,7 @@
                         @include('answers._answer')
                     @endforeach
                 </div>
+                
             </div>
         </div>
     </div>
