@@ -4,5 +4,8 @@ export default {
     },
     accept(user, answer) {
         return user.id === answer.question.user_id;
+    },
+    delete(user, question) {
+        return user.id === question.user_id && question.answers_count < 1;
     }
 };

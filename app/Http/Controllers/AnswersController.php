@@ -30,7 +30,8 @@ class AnswersController extends Controller
             'body' => 'required',
         ]) + ['user_id' => \Auth::id()]);
 
-        if($request->expectsJson()) {
+        if($request->expectsJson()) 
+        {
             return response()->json([
                 'message' => 'Your answer has been submitted successfully!',
                 'answer' => $answer->load('user')

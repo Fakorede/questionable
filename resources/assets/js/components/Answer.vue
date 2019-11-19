@@ -60,6 +60,9 @@
 </template>
 
 <script>
+import Vote from "./Vote";
+import UserInfo from "./UserInfo";
+
 export default {
     props: ["answer"],
     data() {
@@ -151,6 +154,7 @@ export default {
         endpoint() {
             return `/questions/${this.questionId}/answers/${this.id}`;
         }
-    }
+    },
+    components: { Vote, UserInfo }
 };
 </script>

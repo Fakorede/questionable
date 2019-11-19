@@ -21,7 +21,7 @@ class Question extends Model
      *
      * @var array
      */
-    protected $appends = ['created_date', 'is_favorited', 'favorites_count'];
+    protected $appends = ['created_date', 'is_favorited', 'favorites_count', 'body_html'];
 
     /**
      * Relationships
