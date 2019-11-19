@@ -41,6 +41,5 @@
 
     <answers :question="{{ $question }}"></answers>
 
-    @include('answers._create')
 </div>
 @endsection
