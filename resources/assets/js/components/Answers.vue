@@ -11,7 +11,8 @@
                     <hr />
 
                     <answer
-                        v-for="answer in answers"
+                        @deleted="remove(index)"
+                        v-for="(answer, index) in answers"
                         :answer="answer"
                         :key="answer.id"
                     ></answer>
@@ -52,6 +53,10 @@ export default {
                 this.answers.push(...data.data);
                 this.nextUrl = data.next_page_url;
             });
+        },
+        remove(index) {
+            this.answers.splice(index, 1);
+            this.count--;
         }
     },
     computed: {
