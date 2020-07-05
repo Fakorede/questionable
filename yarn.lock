@@ -2,6 +2,25 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome-common-types@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.7.tgz#4336c4b06d0b5608ff1215464b66fcf9f4795284"
+  integrity sha512-ego8jRVSHfq/iq4KRZJKQeUAdi3ZjGNrqw4oPN3fNdvTBnLCSntwVCnc37bsAJP9UB8MhrTfPnZYxkv2vpS4pg==
+
+"@fortawesome/fontawesome-free-solid@^5.0.13":
+  version "5.0.13"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.13.tgz#24b61aaf471a9d34a5364b052d64a516285ba894"
+  integrity sha512-b+krVnqkdDt52Yfev0x0ZZgtxBQsLw00Zfa3uaVWIDzpNZVtrEXuxldUSUaN/ihgGhSNi8VpvDAdNPVgCKOSxw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.7"
+
+"@fortawesome/fontawesome@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome/-/fontawesome-1.1.8.tgz#75fe66a60f95508160bb16bd781ad7d89b280f5b"
+  integrity sha512-c0/MtkPVT0fmiFcCyYoPjkG9PkMOvfrZw2+0BaJ+Rh6UEcK1AR/LaRgrHHjUkbAbs9LXxQJhFS8CJ4uSnK2+JA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.7"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -3390,10 +3409,15 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
-jquery@^3.2:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
-  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+izitoast@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/izitoast/-/izitoast-1.4.0.tgz#1aa4e3408b7159fba743506af66d8be54fd929fb"
+  integrity sha512-Oc1X2wiQtPp39i5VpIjf3GJf5sfCtHKXZ5szx7RareyEeFLUlcEW0FSfBni28+Ul6KNKZRKzhVuWzSP4Xngh0w==
+
+jquery@^3.5:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
+  integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.5.1"
@@ -6402,6 +6426,13 @@ vue-hot-reload-api@^2.2.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==
+
+vue-izitoast@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vue-izitoast/-/vue-izitoast-1.2.1.tgz#cd2cbfbd96ea438dede8fb00f2c328364cb7141d"
+  integrity sha512-5krrKyAftSR3TnnO3zhMihYCSt0Lay4SBO1AWWKD3jhTErJrR+q9kOKyuAYhn1SttNER87hpnRKqdvLjzjHWQQ==
+  dependencies:
+    izitoast "^1.4.0"
 
 vue-loader@^13.7.1:
   version "13.7.3"
