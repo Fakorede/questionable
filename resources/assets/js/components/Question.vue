@@ -21,13 +21,15 @@
           <div class="media">
             <div class="media-body">
               <div class="form-group">
-                <textarea
-                  name="body"
-                  v-model="body"
-                  class="form-control"
-                  rows="10"
-                  required
-                ></textarea>
+                <m-editor :body="body">
+                  <textarea
+                    name="body"
+                    v-model="body"
+                    class="form-control"
+                    rows="10"
+                    required
+                  ></textarea>
+                </m-editor>
               </div>
               <button
                 class="btn btn-sm btn-outline-primary"
@@ -110,6 +112,7 @@
 <script>
 import Vote from "./Vote";
 import UserInfo from "./UserInfo";
+import MEditor from "./MEditor";
 import refactor from "../mixins/refactor";
 
 export default {
@@ -161,6 +164,6 @@ export default {
       return `/questions/${this.id}/`;
     }
   },
-  components: { Vote, UserInfo }
+  components: { Vote, UserInfo, MEditor }
 };
 </script>

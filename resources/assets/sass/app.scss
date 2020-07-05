@@ -5,7 +5,12 @@
 @import "variables";
 
 // Bootstrap
+
 @import "~bootstrap/scss/bootstrap";
+
+body {
+    background: #f5f8fa;
+}
 
 .navbar-laravel {
     background-color: #fff;
